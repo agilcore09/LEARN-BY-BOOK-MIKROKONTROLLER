@@ -1,0 +1,30 @@
+// init led
+int pinLED = 4;
+int pinInput = 5;
+int periksa = 0;
+
+void setup()
+{
+  // setup pin mode sebagai output
+  pinMode(pinLED, OUTPUT);
+  // setup pin mode sebagai input
+  pinMode(pinInput, INPUT);
+}
+
+void loop()
+{
+  // mengubah nilai pinInput menjadi 1/HIGH
+  digitalWrite(pinInput, HIGH);
+  periksa = digitalRead(pinInput);
+  
+  // mengecek dari switch
+  
+  // jika dia 1 maka matikan pin led.
+  if(periksa == HIGH){
+  	digitalWrite(pinLED, LOW);
+    delay(100);
+  } else {
+  	digitalWrite(pinLED, HIGH);
+    delay(100);
+  }
+}
